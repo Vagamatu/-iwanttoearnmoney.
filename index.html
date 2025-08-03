@@ -1,29 +1,75 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="sk">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Moje domény na predaj</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Domény na predaj</title>
   <style>
-    body { font-family: Arial, sans-serif; padding: 2em; background-color: #f9f9f9; }
-    h1 { color: #2c3e50; }
-    ul { list-style: none; padding: 0; }
-    li { background: white; margin: 10px 0; padding: 10px; border: 1px solid #ddd; border-radius: 5px; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(120deg, #f0f2f5, #dbe9f4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+    h1 {
+      color: #1a202c;
+      margin-bottom: 1.5rem;
+      font-size: 2.5rem;
+    }
+    .domain-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+      max-width: 400px;
+    }
+    .domain {
+      background: white;
+      padding: 1rem;
+      border-radius: 12px;
+      border: 1px solid #cbd5e0;
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: 500;
+      transition: transform 0.2s;
+    }
+    .domain:hover {
+      transform: scale(1.03);
+      background: #edf2f7;
+    }
+    .contact {
+      margin-top: 2rem;
+      font-size: 1rem;
+      color: #2d3748;
+    }
+    .contact a {
+      color: #3182ce;
+      text-decoration: none;
+    }
+    .contact a:hover {
+      text-decoration: underline;
+    }
   </style>
-  <script>
-  if (window.location.hostname.startsWith("www.")) {
-    window.location.href = window.location.href.replace("www.", "");
-  }
-</script>
-
 </head>
 <body>
+
   <h1>Domény na predaj</h1>
-  <ul>
-    <li>priklad.sk</li>
-    <li>superweb.com</li>
-    <li>mojprojekt.net</li>
-  </ul>
-  <p>Kontakt: <a href="mailto:tvoj@email.com">tvoj@email.com</a></p>
+
+  <div class="domain-list">
+    <div class="domain">priklad.sk</div>
+    <div class="domain">superweb.com</div>
+    <div class="domain">mojprojekt.net</div>
+  </div>
+
+  <div class="contact">
+    Kontakt: <a href="mailto:tvoj@email.com">tvoj@email.com</a>
+  </div>
+
 </body>
 </html>
