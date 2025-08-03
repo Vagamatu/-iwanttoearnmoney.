@@ -8,13 +8,38 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom, #0d0d0d, #1a1a1a);
+      background: #0d0d0d;
       color: #fff;
       display: flex;
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
       padding: 2em;
+      overflow-x: hidden;
+    }
+
+    /* Background animation */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, #00ffe1 1px, transparent 1px);
+      background-size: 40px 40px;
+      opacity: 0.05;
+      animation: drift 60s linear infinite;
+      z-index: -1;
+    }
+
+    @keyframes drift {
+      0% {
+        transform: translate(0, 0);
+      }
+      100% {
+        transform: translate(-50%, -50%);
+      }
     }
 
     .logo {
@@ -31,14 +56,20 @@
     }
 
     .domain-card {
-      background-color: #111;
-      border: 1px solid #333;
+      background-color: rgba(15, 15, 15, 0.9);
+      border: 1px solid #222;
       border-radius: 12px;
       padding: 1.5em 2em;
       margin: 1em 0;
       width: 100%;
       max-width: 480px;
-      box-shadow: 0 0 12px rgba(0, 255, 200, 0.1);
+      box-shadow: 0 0 18px rgba(0, 255, 200, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .domain-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 30px rgba(0, 255, 200, 0.3);
     }
 
     .domain-card h2 {
@@ -58,11 +89,13 @@
       border-radius: 8px;
       font-weight: bold;
       text-decoration: none;
-      transition: 0.3s ease;
+      box-shadow: 0 0 10px #00ffe1;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
     }
 
     .domain-card a:hover {
       background: #00ccb2;
+      box-shadow: 0 0 20px #00ccb2;
     }
 
     .contact {
