@@ -1,1 +1,1 @@
-# -iwanttoearnmoney.
+# iwanttoearnmoney
