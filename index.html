@@ -3,106 +3,111 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Premium Domains for Sale</title>
+  <title>Premium Domains</title>
   <style>
     body {
       margin: 0;
-      background: #0e0e0e;
       font-family: 'Segoe UI', sans-serif;
-      color: #ffffff;
+      background: linear-gradient(to bottom, #0d0d0d, #1a1a1a);
+      color: #fff;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 2rem 1rem;
+      min-height: 100vh;
+      padding: 2em;
+    }
+
+    .logo {
+      width: 180px;
+      margin-bottom: 1em;
+      filter: drop-shadow(0 0 15px #00ffe1);
     }
 
     h1 {
-      font-size: 2.8rem;
-      color: #00e6e6;
-      margin-bottom: 2rem;
-      text-shadow: 0 0 10px #00e6e6;
+      font-size: 2.5em;
+      margin: 0.5em 0;
+      color: #00ffe1;
+      text-shadow: 0 0 15px #00ffe1;
     }
 
     .domain-card {
-      background: #1a1a1a;
-      border: 1px solid #2a2a2a;
+      background-color: #111;
+      border: 1px solid #333;
       border-radius: 12px;
-      padding: 1.5rem;
-      margin: 1rem 0;
-      max-width: 500px;
+      padding: 1.5em 2em;
+      margin: 1em 0;
       width: 100%;
-      box-shadow: 0 0 15px rgba(0, 230, 230, 0.1);
-      transition: transform 0.3s;
+      max-width: 480px;
+      box-shadow: 0 0 12px rgba(0, 255, 200, 0.1);
     }
 
-    .domain-card:hover {
-      transform: scale(1.02);
+    .domain-card h2 {
+      color: #fff;
+      margin-bottom: 0.3em;
     }
 
-    .domain-title {
-      font-size: 1.6rem;
-      color: #ffffff;
-      margin-bottom: 0.5rem;
+    .domain-card p {
+      margin: 0.3em 0 1em;
+      color: #ccc;
     }
 
-    .domain-desc {
-      font-size: 1rem;
-      color: #cccccc;
-      margin-bottom: 1rem;
-    }
-
-    .btn {
-      display: inline-block;
-      background: #00e6e6;
+    .domain-card a {
+      background: #00ffe1;
       color: #000;
-      padding: 0.6rem 1.2rem;
+      padding: 0.6em 1.2em;
       border-radius: 8px;
-      text-decoration: none;
       font-weight: bold;
-      box-shadow: 0 0 10px #00e6e6;
-      transition: background 0.3s;
+      text-decoration: none;
+      transition: 0.3s ease;
     }
 
-    .btn:hover {
-      background: #00cccc;
+    .domain-card a:hover {
+      background: #00ccb2;
     }
 
-    footer {
-      margin-top: 3rem;
-      font-size: 0.9rem;
-      color: #666;
+    .contact {
+      margin-top: 2em;
+      color: #aaa;
     }
 
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2rem;
-      }
+    .contact a {
+      color: #00ffe1;
+      text-decoration: none;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <h1>Domény na predaj</h1>
+
+  <!-- Logo -->
+  <img class="logo" src="logo.png" alt="Premium Domains Logo" />
+
+  <h1>Premium Domains</h1>
 
   <div class="domain-card">
-    <div class="domain-title">ZUQUEN.COM</div>
-    <div class="domain-desc">Clean. Brandable. Future-ready.</div>
-    <a class="btn" href="https://zuquen.com" target="_blank">Buy Now</a>
+    <h2>ZUQUEN.COM</h2>
+    <p>Clean. Brandable. Future-ready.</p>
+    <a href="https://zuquen.com" target="_blank">Buy Now</a>
   </div>
 
   <div class="domain-card">
-    <div class="domain-title">WORLDAIPLACE.COM</div>
-    <div class="domain-desc">Futuristic domain perfect for AI startups or platforms.</div>
-    <a class="btn" href="https://worldaiplace.com" target="_blank">Buy Now</a>
+    <h2>WORLDAIPLACE.COM</h2>
+    <p>Futuristic domain perfect for AI startups or platforms.</p>
+    <a href="https://worldaiplace.com" target="_blank">Buy Now</a>
   </div>
 
   <div class="domain-card">
-    <div class="domain-title">GONEXTCRYPTO.COM</div>
-    <div class="domain-desc">Premium crypto domain. Listed and ready.</div>
-    <a class="btn" href="https://gonextcrypto.com" target="_blank">Buy Now</a>
+    <h2>GONEXTCRYPTO.COM</h2>
+    <p>Premium crypto domain. Listed and ready.</p>
+    <a href="https://gonextcrypto.com" target="_blank">Buy Now</a>
   </div>
 
-  <footer>
-    Kontakt: <a href="mailto:tvoj@email.com" style="color:#00e6e6;">tvoj@email.com</a>
-  </footer>
+  <div class="contact">
+    Contact: <a href="mailto:tvoj@email.com">tvoj@email.com</a>
+  </div>
+
 </body>
 </html>
