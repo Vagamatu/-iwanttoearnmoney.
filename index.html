@@ -10,6 +10,12 @@
     ul { list-style: none; padding: 0; }
     li { background: white; margin: 10px 0; padding: 10px; border: 1px solid #ddd; border-radius: 5px; }
   </style>
+  <script>
+  if (window.location.hostname.startsWith("www.")) {
+    window.location.href = window.location.href.replace("www.", "");
+  }
+</script>
+
 </head>
 <body>
   <h1>Domény na predaj</h1>
