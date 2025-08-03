@@ -7,140 +7,125 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #0d0d0d;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0a0a0a;
       color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-      padding: 2em;
       overflow-x: hidden;
+      position: relative;
     }
 
-    /* Background animation */
+    /* Scanline effect */
     body::before {
-      content: '';
+      content: "";
       position: fixed;
       top: 0;
       left: 0;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, #00ffe1 1px, transparent 1px);
-      background-size: 40px 40px;
-      opacity: 0.05;
-      animation: drift 60s linear infinite;
-      z-index: -1;
+      width: 100%;
+      height: 100%;
+      background-image: repeating-linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.02),
+        rgba(255, 255, 255, 0.02) 1px,
+        transparent 1px,
+        transparent 3px
+      );
+      z-index: 0;
+      pointer-events: none;
+      animation: scanmove 10s linear infinite;
     }
 
-    @keyframes drift {
+    @keyframes scanmove {
       0% {
-        transform: translate(0, 0);
+        background-position-y: 0;
       }
       100% {
-        transform: translate(-50%, -50%);
+        background-position-y: 100px;
       }
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
     }
 
     .logo {
-      width: 180px;
-      margin-bottom: 1em;
-      filter: drop-shadow(0 0 15px #00ffe1);
-    }
-
-    h1 {
-      font-size: 2.5em;
-      margin: 0.5em 0;
-      color: #00ffe1;
-      text-shadow: 0 0 15px #00ffe1;
+      max-width: 180px;
+      margin-bottom: 2rem;
+      filter: drop-shadow(0 0 15px #00f5ff);
     }
 
     .domain-card {
-      background-color: rgba(15, 15, 15, 0.9);
-      border: 1px solid #222;
+      background: #111;
+      border: 1px solid #1f1f1f;
       border-radius: 12px;
-      padding: 1.5em 2em;
-      margin: 1em 0;
-      width: 100%;
-      max-width: 480px;
-      box-shadow: 0 0 18px rgba(0, 255, 200, 0.1);
-      transition: transform 0.3s ease;
+      padding: 1.5rem;
+      margin: 1rem;
+      width: 300px;
+      text-align: left;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.05);
     }
 
     .domain-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 0 30px rgba(0, 255, 200, 0.3);
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+      border-color: #00f5ff;
     }
 
     .domain-card h2 {
-      color: #fff;
-      margin-bottom: 0.3em;
+      margin: 0 0 0.5rem 0;
+      font-size: 1.2rem;
     }
 
     .domain-card p {
-      margin: 0.3em 0 1em;
-      color: #ccc;
+      font-size: 0.95rem;
+      color: #bbb;
     }
 
-    .domain-card a {
-      background: #00ffe1;
-      color: #000;
-      padding: 0.6em 1.2em;
-      border-radius: 8px;
+    .btn {
+      margin-top: 1rem;
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      color: #0a0a0a;
+      background: #00f5ff;
+      border: none;
+      border-radius: 6px;
       font-weight: bold;
       text-decoration: none;
-      box-shadow: 0 0 10px #00ffe1;
-      transition: background 0.3s ease, box-shadow 0.3s ease;
+      transition: background 0.3s, transform 0.2s;
     }
 
-    .domain-card a:hover {
-      background: #00ccb2;
-      box-shadow: 0 0 20px #00ccb2;
-    }
-
-    .contact {
-      margin-top: 2em;
-      color: #aaa;
-    }
-
-    .contact a {
-      color: #00ffe1;
-      text-decoration: none;
-    }
-
-    .contact a:hover {
-      text-decoration: underline;
+    .btn:hover {
+      background: #00ffff;
+      transform: scale(1.05);
     }
   </style>
 </head>
 <body>
+  <div class="container">
+    <img src="logo.png" alt="Premium Domains Logo" class="logo" />
 
-  <!-- Logo -->
-  <img class="logo" src="logo.png" alt="Premium Domains Logo" />
+    <div class="domain-card">
+      <h2>ZUQUEN.COM</h2>
+      <p>Clean. Brandable. Future-ready.</p>
+      <a href="https://zuquen.com" class="btn" target="_blank">Buy Now</a>
+    </div>
 
-  <h1>Premium Domains</h1>
+    <div class="domain-card">
+      <h2>WORLDAIPLACE.COM</h2>
+      <p>Futuristic domain perfect for AI startups or platforms.</p>
+      <a href="https://worldaiplace.com" class="btn" target="_blank">Buy Now</a>
+    </div>
 
-  <div class="domain-card">
-    <h2>ZUQUEN.COM</h2>
-    <p>Clean. Brandable. Future-ready.</p>
-    <a href="https://zuquen.com" target="_blank">Buy Now</a>
+    <div class="domain-card">
+      <h2>GONEXTCRYPTO.COM</h2>
+      <p>Premium crypto domain. Listed and ready.</p>
+      <a href="https://gonextcrypto.com" class="btn" target="_blank">Buy Now</a>
+    </div>
   </div>
-
-  <div class="domain-card">
-    <h2>WORLDAIPLACE.COM</h2>
-    <p>Futuristic domain perfect for AI startups or platforms.</p>
-    <a href="https://worldaiplace.com" target="_blank">Buy Now</a>
-  </div>
-
-  <div class="domain-card">
-    <h2>GONEXTCRYPTO.COM</h2>
-    <p>Premium crypto domain. Listed and ready.</p>
-    <a href="https://gonextcrypto.com" target="_blank">Buy Now</a>
-  </div>
-
-  <div class="contact">
-    Contact: <a href="mailto:tvoj@email.com">tvoj@email.com</a>
-  </div>
-
 </body>
 </html>
